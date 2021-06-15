@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蜗牛笔记-全功能博客系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+          shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css"/>
+    <!-- 将CSS样式表写入到专门的文件中，在此处引入即可 -->
+    <link rel="stylesheet" href="/css/woniunote.css" type="text/css"/>
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+</head>
+<body>
+<!-- 首页顶部Logo和Slogan区域 -->
+<div class="navbar-default header">
+    <div class="container" style="padding: 0px 10px 0px 0px;">
+        <div class="row">
+            <div class="col-sm-4 col-4" style="margin: 10px 0px;">
+                <a href="/">
+                    <img src="/img/logo.png" style="width: 230px;">
+                </a>
+            </div>
+            <!-- 仅在sm及以上设备中显示 -->
+            <div class="col-sm-8 col-8 d-none d-sm-block"
+                 style="text-align: right; padding-top: 20px;">
+                <h2 style="color: midnightblue">以蜗牛之名, 行学习之实</h2>
+            </div>
+            <!-- 仅在移动端显示 -->
+            <div class="col-sm-8 col-8 d-sm-none"
+                 style="text-align: right; padding-top: 20px;">
+                <h3 style="color: midnightblue">技术博客</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 设置一个最外层DIV，保持100%的宽度拉通，设置导航栏 -->
+<div class="my-menu">
+    <div class="container" style="padding: 0px;">
+        <!-- 基于BootStrap定制导航栏，可以参数bootcss.com中文网站的教程 -->
+        <nav class="navbar navbar-expand-lg navbar-dark menu-bar">
+            <a class="navbar-brand" href="#">快捷导航</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <!-- 配置折叠按钮，在移动端点击即可显示导航菜单，所有类和ID属性请勿修改 -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- 配置导航菜单项列表 -->
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="/type/1">PHP开发</a>
+                    <a class="nav-item nav-link" href="/type/2">Java开发</a>
+                    <a class="nav-item nav-link" href="/type/3">Python开发</a>
+                    <a class="nav-item nav-link" href="/type/4">Web前端</a>
+                    <a class="nav-item nav-link" href="/type/5">测试开发</a>
+                    <a class="nav-item nav-link" href="/type/6">数据科学</a>
+                    <a class="nav-item nav-link" href="/type/7">网络安全</a>
+                    <a class="nav-item nav-link" href="/type/8">蜗牛杂谈</a>
+                </div>
+                <!-- ml-auto类属性设置菜单项靠右对齐 -->
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#mymodal">登录</a>
+                    <a class="nav-item nav-link" href="#">注销</a>
+                    <a class="nav-item nav-link" href="#">用户中心</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<!-- 中部区域布局 -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-12" style="padding: 0 10px;" id="left">
+            <div class="col-12" style="height: 250px; border: solid 2px red;">
+                这里放置轮播图
+            </div>
+            <div class="col-12" style="height: 120px; border: solid 2px red;
+margin: 10px 0;">
+                这里放置文章摘要
+            </div>
+            <div class="col-12" style="height: 120px; border: solid 2px red;
+margin: 10px 0;">
+                这里放置文章摘要
+            </div>
+            <div class="col-12" style="height: 120px; border: solid 2px red;
+margin: 10px 0;">
+                这里放置文章摘要
+            </div>
+            <div class="col-12" style="height: 120px; border: solid 2px red;
+margin: 10px 0;">
+                这里放置文章摘要
+            </div>
+        </div>
+        <div class="col-sm-3 col-12" style="padding: 0px 10px;" id="side">
+            <div class="col-12" style="height: 60px; border: solid 2px red;">
+                文章搜索栏</div>
+            <div class="col-12" style="height: 340px; border: solid 2px red;
+margin: 10px 0;">文章推荐栏</div>
+            <div class="col-12" style="height: 350px; border: solid 2px red;
+margin: 10px 0;">文章推荐栏</div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

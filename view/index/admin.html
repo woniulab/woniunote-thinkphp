@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蜗牛笔记-全功能博客系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+          shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/bootstrap.css" type="text/css"/>
+    <!-- 将CSS样式表写入到专门的文件中，在此处引入即可 -->
+    <link rel="stylesheet" href="/css/woniunote.css" type="text/css"/>
+    <!-- 引用open-iconic图标库 -->
+    <link href="/icon/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
+</head>
+<body>
+<!-- 首页顶部Logo和Slogan区域 -->
+<div class="navbar-default header">
+    <div class="container" style="padding: 0px 10px 0px 0px;">
+        <div class="row">
+            <div class="col-sm-4 col-4" style="margin: 10px 0px;">
+                <a href="/">
+                    <img src="/img/logo.png" style="width: 230px;" class="img-fluid">
+                </a>
+            </div>
+            <!-- 仅在sm及以上设备中显示 -->
+            <div class="col-sm-8 col-8 d-none d-sm-block"
+                 style="text-align: right; padding-top: 20px;">
+                <h2 style="color: midnightblue">以蜗牛之名, 行学习之实</h2>
+            </div>
+            <!-- 仅在移动端显示 -->
+            <div class="col-sm-8 col-8 d-sm-none"
+                 style="text-align: right; padding-top: 20px;">
+                <h3 style="color: midnightblue">技术博客</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 设置一个最外层DIV，保持100%的宽度拉通，设置导航栏 -->
+<div class="my-menu">
+    <div class="container" style="padding: 0px;">
+        <!-- 基于BootStrap定制导航栏，可以参数bootcss.com中文网站的教程 -->
+        <nav class="navbar navbar-expand-lg navbar-dark menu-bar" style="background-color: #563d7c;">
+            <a class="navbar-brand" href="#">快捷导航</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <!-- 配置折叠按钮，在移动端点击即可显示导航菜单，所有类和ID属性请勿修改 -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- 配置导航菜单项列表 -->
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="/type/1">PHP开发</a>
+                    <a class="nav-item nav-link" href="/type/2">Java开发</a>
+                    <a class="nav-item nav-link" href="/type/3">Python开发</a>
+                    <a class="nav-item nav-link" href="/type/4">Web前端</a>
+                    <a class="nav-item nav-link" href="/type/5">测试开发</a>
+                    <a class="nav-item nav-link" href="/type/6">数据科学</a>
+                    <a class="nav-item nav-link" href="/type/7">网络安全</a>
+                    <a class="nav-item nav-link" href="/type/8">蜗牛杂谈</a>
+                </div>
+                <!-- ml-auto类属性设置菜单项靠右对齐 -->
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link" href="#">登录</a>
+                    <a class="nav-item nav-link" href="#">注销</a>
+                    <a class="nav-item nav-link" href="#">用户中心</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<!-- 中部区域布局 -->
+<div class="container" style="margin-top: 10px;">
+<div class="row">
+<div class="col-sm-2 col-12" style="padding: 0px 10px; ">
+    <div class="col-12 admin-side" style="height: 320px">
+        <ul>
+        <li><a href="#"><span class="oi oi-image" aria-hidden="true"></span>&nbsp;&nbsp;文章管理</a>
+        </li>
+        <li><a href="#"><span class="oi oi-task" aria-hidden="true"></span>&nbsp;&nbsp;评论管理</a>
+        </li>
+        <li><a href="#"><span class="oi oi-person" aria-hidden="true"></span>&nbsp;&nbsp;用户管理</a>
+        </li>
+        <li><a href="#"><span class="oi oi-heart" aria-hidden="true"></span>&nbsp;&nbsp;收藏管理</a>
+        </li>
+        <li><a href="#"><span class="oi oi-account-login" aria-hidden="true"></span>&nbsp;&nbsp;推荐管理</a>
+        </li>
+        <li><a href="#"><span class="oi oi-zoom-in" aria-hidden="true"></span>&nbsp;&nbsp;隐藏管理</a>
+        </li>
+        <li><a href="#"><span class="oi oi-zoom-in" aria-hidden="true"></span>&nbsp;&nbsp;投稿审核</a>
+        </li>
+        </ul>
+    </div>
+</div>
+<div class="col-sm-10 col-12" style="padding: 0px 10px">
+    <div class="col-12 admin-main">
+    <div class="col-12 row"
+         style="padding: 10px;margin: 0px 10px;">
+        <div class="col-2">
+            <label>选择常用操作：</label>
+        </div>
+        <div class="col-2">
+            <input type="button" class="btn btn-primary" value="新增文章"/>
+        </div>
+        <div class="col-2">
+
+        </div>
+        <div class="col-4">
+            <input type="text" class="form-control"/>
+        </div>
+        <div class="col-2">
+            <input type="button" class="btn btn-primary" value="搜索文章"/>
+        </div>
+    </div>
+
+    <div class="col-12" style="padding: 10px;">
+    <table class="table col-12">
+        <thead style="font-weight: bold">
+        <tr>
+            <td width="10%" align="center">编号</td>
+            <td width="65%">标题</td>
+            <td width="25%">操作</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td align="center">1</td>
+            <td>利用ThinkPHP框架开发Web应用系统</td>
+            <td>
+                <a href="#" target="_blank">浏览</a>&nbsp;&nbsp;
+                <a href="#" target="_blank">编辑</a>&nbsp;&nbsp;
+                <a href="#">推荐</a>&nbsp;&nbsp;
+                <a href="#">隐藏</a>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">1</td>
+            <td>利用ThinkPHP框架开发Web应用系统</td>
+            <td>
+                <a href="#" target="_blank">浏览</a>&nbsp;&nbsp;
+                <a href="#" target="_blank">编辑</a>&nbsp;&nbsp;
+                <a href="#">推荐</a>&nbsp;&nbsp;
+                <a href="#">隐藏</a>
+            </td>
+        </tr>
+        <tr>
+            <td align="center">1</td>
+            <td>利用ThinkPHP框架开发Web应用系统</td>
+            <td>
+                <a href="#" target="_blank">浏览</a>&nbsp;&nbsp;
+                <a href="#" target="_blank">编辑</a>&nbsp;&nbsp;
+                <a href="#">推荐</a>&nbsp;&nbsp;
+                <a href="#">隐藏</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>
+</div>
+</div>
+</div>
+
+<!-- 底部设计 -->
+<div class="container-fluid footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-4 left">
+                	<p>版权所有 &copy; 蜗牛笔记 (V-1.0)</p>
+                	<p>备案号： 蜀ICP备15014130号</p>
+            </div>
+            <div class="col-4 center">
+                	<p>友情链接</p>
+                	<p><a href="http://www.woniuxy.com/" target="_blank">在线课堂</a>&nbsp;&nbsp;&nbsp;
+                		<a href="http://www.woniuxy.com/live" target="_blank">直播课堂</a>&nbsp;&nbsp;&nbsp;
+                		<a href="http://www.woniuxy.com/train/index.html" target="_blank">培训中心</a>&nbsp;&nbsp;&nbsp;
+                        <a href="http://www.aduobi.com" target="_blank">UI设计学院</a>
+                	</p>
+            </div>
+            <div class="col-4 right">
+                	<p>联系我们</p>
+                	<p>成都★孵化园&nbsp;&nbsp;&nbsp;QQ/微信：15903523</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

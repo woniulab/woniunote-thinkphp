@@ -1,0 +1,57 @@
+<!-- 侧栏文章推荐 -->
+<div class="col-sm-3 col-12" style="padding: 0px 10px;">
+    <div class="col-12 search-bar form-group row">
+        <div class="col-8">
+            <input type="text" class="form-control" id="keyword" placeholder="请输入关键字" onkeyup="doSearch(event)"/>
+        </div>
+        <div class="col-4" style="text-align:right;">
+            <button type="button" class="btn btn-primary" onclick="doSearch(null)">搜索</button>
+        </div>
+    </div>
+
+    <div class="col-12 side">
+        <div class="tip">最新文章</div>
+        <ul>
+            {volist name="last" id="article"}
+            <li><a href="/article/{$article.articleid}">{$i}. {$article.headline | mb_substr=0,15} ...</a></li>
+            {/volist}
+        </ul>
+    </div>
+
+    <div class="col-12 side">
+        <div class="tip">最多阅读</div>
+        <ul>
+            {volist name="most" id="article"}
+            <li><a href="/article/{$article.articleid}">{$i}. {$article.headline | mb_substr=0,15} ...</a></li>
+            {/volist}
+        </ul>
+    </div>
+
+    <div class="col-12 side">
+        <div class="tip">特别推荐</div>
+        <ul>
+            {volist name="recommended" id="article"}
+            <li><a href="/article/{$article.articleid}">{$i}. {$article.headline | mb_substr=0,15} ...</a></li>
+            {/volist}
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function doSearch(e) {
+        // 如果参数e有值，但是对应的键盘码不是13（13表示回车），则不做响应
+        if (e != null && e.keyCode != 13) {
+            return false;
+        }
+        // 利用jQuery的ID选择器取搜索框的值，为去除前后空格
+        var keyword = $.trim($("#keyword").val());
+        // 如果关键字为空，或长度大于10，或包含%，则表示无效，代码结束运行
+        if (keyword.length == 0 || keyword.length > 10 || keyword.indexOf("%") >= 0) {
+            bootbox.alert({title:'错误提示', message:'你输入的关键字不合法.'});
+            $("#keyword").focus();     // 让文本框获取到焦点，方便用户输入
+            return false;
+        }
+        // 如果keyword满足条件，则直接将页面跳转至/search/1-<keyword>地址
+        location.href = '/search/1-' + keyword;
+    }
+</script>

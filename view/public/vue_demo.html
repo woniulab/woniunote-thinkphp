@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue填充图书信息</title>
+    <!-- 导入Vue库 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<table width="500" border="1" align="center" cellpadding="5">
+    <tr>
+        <td width="20%">编号</td>
+        <td width="30%">书名</td>
+        <td width="30%">作者</td>
+        <td width="20%">价格</td>
+    </tr>
+    <tbody id="booklist">
+    <!-- 使用Vue语法v-for进行循环，book和index对应数据和下标 -->
+    <!-- 如果不需要index，则直接v-for="book in content"即可 -->
+    <!-- 也支持更多遍历方式如v-for="(book, key, index) in content" -->
+    <!-- 默认Vue使用{{var}}来引用变量的值，可以在实例化时Vue时自定义分隔符 -->
+    <tr v-for="(book, index) in content">
+        <td>{{book.id}}</td>
+        <!-- 由于超链接是动态渲染，所以必须使用v-bind进行处理 -->
+        <!-- 由于超链接是字符串和模板变量拼接，所以字符串要加引号 -->
+        <td><a v-bind:href="'http://127.0.0.1:5000/' + book.id">{{book.title}}
+        </a></td>
+        <td>{{book.author}}</td>
+        <td>{{book.price}}</td>
+    </tr>
+    </tbody>
+</table>
+
+<!--用于渲染模版-->
+<script>
+    var books = [
+        {'id': 1, 'title': '论语', 'author': '孔子', 'price': 35},
+        {'id': 2, 'title': '道德经', 'author': '老子', 'price': 18},
+        {'id': 3, 'title': 'Flask教材', 'author': '强子', 'price': 38}];
+    // 实例化Vue，并指定JSON数据给content同时绑定booklist的表格元素
+    var v = new Vue({
+        el: '#booklist',    // 指定与哪个HTML元素进行动态绑定
+        data: {content: books},   // 指定对应的动态渲染的内容
+        // delimiters: ['{<', '>}']  // 也可以自定义分隔符
+    });
+</script>
+</body>
+</html>

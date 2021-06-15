@@ -1,0 +1,48 @@
+{extend name="../view/public/base.html" /}
+{block name="content"}
+
+<!-- 必须要设置表单的enctype属性为multipart/form-data，表示文件上传
+     同时表单元素必须指定name属性，供后台接口获取其数据 -->
+<!--<form action="/doupload" method="post" enctype="multipart/form-data">-->
+<!--    <input type="text" name="headline"/>-->
+<!--    <textarea name="content"></textarea>-->
+<!--    <input type="file" name="upfile" />-->
+<!--    <input type="submit" value="开始上传" />-->
+<!--</form>-->
+
+<!-- 使用Ajax方式处理，不需要<form>包裹，元素一样定义ID属性即可 -->
+<input type="text" id="headline"/>
+<textarea id="content"></textarea>
+<input type="file" id="upfile" />
+<input type="button" value="开始上传" onclick="doUpload()"/>
+
+<script>
+    function doUpload() {
+        var data = new FormData();	// 带附件上传
+        data.append("headline",$.trim($("#headline").val()));
+        data.append("content",$.trim($("#content").val()));
+        <!-- 此处为JavaScript添加文件的方式 -->
+        data.append("upfile",$("#upfile").prop("files")[0]);
+        $.ajax({
+            url: '/doUpload',
+            type: 'POST',
+            data: data,     // 指定上传数据
+            cache: false,
+            processData: false,
+            contentType: false,
+            success : function(result) {
+                // if(result == "Done"){
+                //     window.alert('恭喜你,上传成功.');
+                // }else if (result == 'Invalid') {
+                //     window.alert('文件类型不匹配.');
+                // }
+                window.alert(result);
+            },
+            error : function(responseStr) {
+                window.alert('上传失败');
+            }
+        });
+    }
+</script>
+
+{/block}
